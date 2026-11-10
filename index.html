@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Навчальна інтерактивна сторінка: життєвий цикл програмного проєкту">
+<title>Життєвий цикл програмного проєкту</title>
+<style>
+:root{--bg:#0b1020;--panel:#141d33;--panel2:#1b2945;--text:#edf3ff;--muted:#aab8d0;--accent:#63d5ff;--accent2:#9b8cff;--line:#2d3c5b;--good:#63d7a2;--bad:#ff8585}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(circle at 80% 0%,#18294b 0,transparent 32%),var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Arial,sans-serif}
+header{padding:54px 22px 38px;text-align:center;border-bottom:1px solid var(--line)}header .tag{color:var(--accent);font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}h1{font-size:clamp(2rem,5vw,3.5rem);line-height:1.12;margin:12px auto;max-width:900px}header p{color:var(--muted);max-width:760px;margin:14px auto 0}
+nav{position:sticky;top:0;z-index:5;background:#0d1527ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;gap:8px;justify-content:center;flex-wrap:wrap;padding:10px}
+nav a{color:var(--text);text-decoration:none;padding:7px 12px;border-radius:9px;font-size:.9rem}nav a:hover{background:var(--panel2);color:var(--accent)}
+main{max-width:1100px;margin:auto;padding:24px 18px 70px}section{scroll-margin-top:82px;margin:28px 0 42px}.section-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}h2{font-size:1.7rem;margin:0}h3{margin:8px 0;color:var(--accent)}.num{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#244b70,#453b7c);font-weight:800}
+.panel{background:linear-gradient(145deg,var(--panel),#111a2e);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 12px 35px #0002}.muted{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}.stage{background:var(--panel2);border:1px solid var(--line);border-radius:14px;padding:17px}.stage strong{display:block;color:var(--accent);font-size:1.04rem;margin-bottom:5px}.stage small{color:var(--muted)}
+.flow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:18px}.flow span{background:#223958;border:1px solid #3b5b80;padding:8px 12px;border-radius:10px}.flow b{color:var(--accent)}
+button,.btn{border:0;border-radius:10px;padding:11px 16px;background:linear-gradient(120deg,#287fb0,#6256bd);color:white;font-weight:700;cursor:pointer;font-size:.95rem}button:hover,.btn:hover{filter:brightness(1.14)}button.secondary{background:#283752;border:1px solid #405477}button:disabled{opacity:.5;cursor:not-allowed}
+label{display:block;font-weight:650;margin:12px 0 6px}input,textarea,select{width:100%;padding:11px 12px;background:#0c1528;border:1px solid #405477;border-radius:9px;color:var(--text);font:inherit}textarea{min-height:82px;resize:vertical}input:focus,textarea:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
+.task{border-left:4px solid var(--accent2);padding:12px 16px;background:#1b2540;border-radius:0 12px 12px 0;margin:14px 0}.question{padding:15px 0;border-bottom:1px solid var(--line)}.question:last-child{border:0}.question p{margin:0 0 9px;font-weight:650}.option{display:flex;gap:9px;align-items:flex-start;font-weight:400;margin:7px 0;color:var(--muted)}.option input{width:auto;margin-top:6px;accent-color:var(--accent)}
+.feedback{margin-top:14px;padding:14px;border-radius:10px;display:none}.feedback.good{display:block;background:#12382f;border:1px solid #28765b}.feedback.bad{display:block;background:#3b2029;border:1px solid #8a4654}.result{font-size:1.2rem;font-weight:800;margin:12px 0}.checklist label{font-weight:400;display:flex;gap:10px;align-items:flex-start}.checklist input{width:auto;margin-top:6px;accent-color:var(--accent)}
+footer{text-align:center;color:var(--muted);padding:24px;border-top:1px solid var(--line);font-size:.9rem}
+@media(max-width:600px){header{padding-top:38px}nav{justify-content:flex-start;overflow:auto;flex-wrap:nowrap}nav a{white-space:nowrap}.panel{padding:17px}}
+@media print{body{background:white;color:#111}nav,button,footer{display:none!important}.panel,.stage{background:white;color:#111;border:1px solid #aaa;box-shadow:none}.muted,.stage small{color:#444}input,textarea{color:#111;background:white;border:1px solid #777}.section-head{break-after:avoid}}
+</style>
+</head>
+<body>
+<header>
+ <div class="tag">Інформатика · 10 клас</div>
+ <h1>Життєвий цикл програмного проєкту</h1>
+ <p>Від проблеми та ідеї — до готового програмного продукту, його перевірки й удосконалення. Вивчай, аналізуй, плануй і спробуй себе в ролі розробника.</p>
+</header>
+<nav>
+ <a href="#theory">Теорія</a><a href="#competence">Компетентнісне завдання</a><a href="#practice">Практична робота</a><a href="#quiz">Тест</a>
+</nav>
+<main>
+<section id="theory">
+ <div class="section-head"><span class="num">01</span><h2>Теорія</h2></div>
+ <div class="panel">
+  <p><b>Життєвий цикл програмного проєкту</b> — це послідовність етапів, через які проходить програмний продукт: від визначення потреби до використання та подальшого вдосконалення.</p>
+  <div class="grid">
+   <article class="stage"><strong>1. Аналіз проблеми та вимог</strong>З’ясовують, яку проблему потрібно розв’язати, хто буде користувачем і які функції має виконувати продукт.<small>Результат: сформульована проблема й вимоги.</small></article>
+   <article class="stage"><strong>2. Планування та проєктування</strong>Визначають завдання, ресурси, строки, структуру майбутньої програми та спосіб її реалізації.<small>Результат: план і модель рішення.</small></article>
+   <article class="stage"><strong>3. Реалізація</strong>Створюють програму: пишуть код, формують інтерфейс, поєднують потрібні компоненти.<small>Результат: робоча версія продукту.</small></article>
+   <article class="stage"><strong>4. Тестування та налагодження</strong>Перевіряють роботу програми в різних ситуаціях, знаходять і виправляють помилки.<small>Результат: перевірений продукт.</small></article>
+   <article class="stage"><strong>5. Впровадження</strong>Готовий продукт передають користувачам, налаштовують середовище та пояснюють правила користування.<small>Результат: продукт доступний користувачам.</small></article>
+   <article class="stage"><strong>6. Супровід і вдосконалення</strong>Збирають відгуки, виправляють виявлені недоліки, додають або змінюють функції.<small>Результат: оновлена версія продукту.</small></article>
+  </div>
+  <div class="flow"><span>Аналіз</span><b>→</b><span>Планування</span><b>→</b><span>Реалізація</span><b>→</b><span>Тестування</span><b>→</b><span>Впровадження</span><b>→</b><span>Супровід</span></div>
+  <div class="task"><b>Важливо!</b> Життєвий цикл не завжди є строго лінійним. Під час тестування можуть виявитися недоліки вимог або проєктування, тому команда повертається до попередніх етапів і вносить зміни.</div>
+ </div>
+</section>
+
+<section id="competence">
+ <div class="section-head"><span class="num">02</span><h2>Компетентнісне завдання</h2></div>
+ <div class="panel">
+  <h3>Ситуація: цифровий облік обладнання STEM-лабораторії</h3>
+  <p>У ліцеї є набори робототехніки, датчики, плати, інструменти та витратні матеріали. Після занять складно з’ясувати, хто взяв обладнання, де воно знаходиться та чи повернули його. Адміністрація пропонує створити просту програму обліку.</p>
+  <p><b>Завдання:</b> проаналізуй ситуацію та визнач, що потрібно зробити на кожному етапі життєвого циклу програмного проєкту.</p>
+  <div class="grid">
+   <div><label for="c1">1. Яку проблему має розв’язати програма?</label><textarea id="c1" placeholder="Сформулюй проблему..."></textarea></div>
+   <div><label for="c2">2. Хто буде користувачами та які вимоги важливі?</label><textarea id="c2" placeholder="Наприклад: учитель, учні; пошук, додавання..."></textarea></div>
+   <div><label for="c3">3. Які основні функції потрібно запланувати?</label><textarea id="c3" placeholder="Переліч основні функції..."></textarea></div>
+   <div><label for="c4">4. Як перевірити, що програма працює правильно?</label><textarea id="c4" placeholder="Опиши 2–3 перевірки..."></textarea></div>
+  </div>
+  <label for="change">Несподівана зміна від замовника</label>
+  <select id="change"><option value="">Обери ситуацію</option><option>Потрібно додати пошук обладнання за назвою.</option><option>Програмою мають користуватися і учні, і вчителі.</option><option>Потрібно показувати, яке обладнання не повернули.</option></select>
+  <label for="response">Як ця зміна вплине на проєкт? До якого етапу потрібно повернутися?</label>
+  <textarea id="response" placeholder="Поясни своє рішення..."></textarea>
+  <button onclick="checkCompetence()">Перевірити відповідь</button>
+  <div id="competenceFeedback" class="feedback"></div>
+ </div>
+</section>
+
+<section id="practice">
+ <div class="section-head"><span class="num">03</span><h2>Практична робота</h2></div>
+ <div class="panel">
+  <h3>«Від ідеї до плану програмного проєкту»</h3>
+  <p><b>Мета:</b> навчитися застосовувати етапи життєвого циклу для планування власного програмного продукту.</p>
+  <p><b>Форма роботи:</b> індивідуально або в парі. <b>Результат:</b> паспорт програмного проєкту.</p>
+  <div class="task"><b>Обери тему проєкту:</b> електронний планувальник навчальних справ; облік обладнання STEM-лабораторії; шкільний довідник; система пошуку загублених речей; власна ідея.</div>
+  <label for="projectName">Назва проєкту</label><input id="projectName" placeholder="Наприклад, STEM-облік">
+  <label for="problem">Етап 1. Аналіз проблеми та вимог — яку проблему розв’язуємо? Хто користувачі? Які їхні потреби?</label><textarea id="problem"></textarea>
+  <label for="plan">Етап 2. Планування та проєктування — які завдання, функції, ресурси й строки потрібні? Опиши структуру майбутнього рішення.</label><textarea id="plan"></textarea>
+  <label for="build">Етап 3. Реалізація — що саме потрібно створити? Які інструменти або мови програмування можна використати?</label><textarea id="build"></textarea>
+  <label for="test">Етап 4. Тестування та налагодження — наведи щонайменше три тестові ситуації та очікувані результати.</label><textarea id="test"></textarea>
+  <label for="launch">Етап 5. Впровадження — як користувачі отримають доступ до продукту? Які інструкції їм потрібні?</label><textarea id="launch"></textarea>
+  <label for="support">Етап 6. Супровід і вдосконалення — які відгуки можна зібрати? Що можна покращити в наступній версії?</label><textarea id="support"></textarea>
+  <label for="risk">Можливі ризики та способи їх зменшення</label><textarea id="risk"></textarea>
+  <div class="checklist">
+   <h3>Самоперевірка</h3>
+   <label><input type="checkbox"> Я сформулював/сформулювала проблему та визначив/визначила користувачів.</label>
+   <label><input type="checkbox"> Я описав/описала функції та план реалізації.</label>
+   <label><input type="checkbox"> Я передбачив/передбачила тестові ситуації.</label>
+   <label><input type="checkbox"> Я продумав/продумала впровадження та подальше вдосконалення.</label>
+  </div>
+  <div class="flow"><button onclick="downloadPassport()">Завантажити паспорт (.txt)</button><button class="secondary" onclick="window.print()">Друкувати / зберегти PDF</button><button class="secondary" onclick="clearPractice()">Очистити поля</button></div>
+ </div>
+ <div class="panel" style="margin-top:16px">
+  <h3>Критерії оцінювання (12 балів)</h3>
+  <div class="grid">
+   <div class="stage"><strong>10–12 балів</strong>Усі етапи описано послідовно й змістовно; вимоги, перевірки та вдосконалення конкретні.</div>
+   <div class="stage"><strong>7–9 балів</strong>Основні етапи визначено правильно; окремі пояснення або приклади недостатньо деталізовані.</div>
+   <div class="stage"><strong>4–6 балів</strong>Описано частину етапів; є неточності у визначенні їх призначення.</div>
+   <div class="stage"><strong>1–3 бали</strong>Відповідь фрагментарна; послідовність і зміст етапів потребують доопрацювання.</div>
+  </div>
+ </div>
+</section>
+
+<section id="quiz">
+ <div class="section-head"><span class="num">04</span><h2>Тест для самоперевірки</h2></div>
+ <div class="panel">
+  <p class="muted">Обери одну правильну відповідь у кожному запитанні. Після перевірки побачиш результат і пояснення.</p>
+  <form id="quizForm">
+   <div class="question"><p>1. З чого починається життєвий цикл програмного проєкту?</p>
+    <label class="option"><input type="radio" name="q1" value="a"> Із написання програмного коду</label><label class="option"><input type="radio" name="q1" value="b"> З аналізу проблеми та вимог</label><label class="option"><input type="radio" name="q1" value="c"> Із впровадження продукту</label><label class="option"><input type="radio" name="q1" value="d"> Із супроводу програми</label></div>
+   <div class="question"><p>2. На якому етапі визначають ресурси, строки та структуру майбутнього продукту?</p>
+    <label class="option"><input type="radio" name="q2" value="a"> Тестування</label><label class="option"><input type="radio" name="q2" value="b"> Впровадження</label><label class="option"><input type="radio" name="q2" value="c"> Планування та проєктування</label><label class="option"><input type="radio" name="q2" value="d"> Супровід</label></div>
+   <div class="question"><p>3. Що є основною діяльністю на етапі реалізації?</p>
+    <label class="option"><input type="radio" name="q3" value="a"> Створення програмного продукту</label><label class="option"><input type="radio" name="q3" value="b"> Збір відгуків після запуску</label><label class="option"><input type="radio" name="q3" value="c"> Визначення потреб користувачів</label><label class="option"><input type="radio" name="q3" value="d"> Підготовка інструкції для користувачів</label></div>
+   <div class="question"><p>4. Для чого проводять тестування?</p>
+    <label class="option"><input type="radio" name="q4" value="a"> Щоб визначити назву проєкту</label><label class="option"><input type="radio" name="q4" value="b"> Щоб знайти помилки та перевірити роботу програми</label><label class="option"><input type="radio" name="q4" value="c"> Щоб обрати користувачів</label><label class="option"><input type="radio" name="q4" value="d"> Щоб завершити планування</label></div>
+   <div class="question"><p>5. Що означає впровадження програмного продукту?</p>
+    <label class="option"><input type="radio" name="q5" value="a"> Створення першого алгоритму</label><label class="option"><input type="radio" name="q5" value="b"> Пошук проблеми</label><label class="option"><input type="radio" name="q5" value="c"> Передавання готового продукту користувачам і підготовка до використання</label><label class="option"><input type="radio" name="q5" value="d"> Видалення попередньої версії</label></div>
+   <div class="question"><p>6. Яка дія належить до супроводу та вдосконалення?</p>
+    <label class="option"><input type="radio" name="q6" value="a"> Визначення початкових вимог</label><label class="option"><input type="radio" name="q6" value="b"> Виправлення недоліків і додавання поліпшень</label><label class="option"><input type="radio" name="q6" value="c"> Створення початкового плану</label><label class="option"><input type="radio" name="q6" value="d"> Вибір проблеми</label></div>
+   <div class="question"><p>7. Під час тестування з’ясувалося, що програма не відповідає потребам користувачів. Що доцільно зробити?</p>
+    <label class="option"><input type="radio" name="q7" value="a"> Ігнорувати проблему</label><label class="option"><input type="radio" name="q7" value="b"> Одразу припинити проєкт</label><label class="option"><input type="radio" name="q7" value="c"> Повернутися до аналізу вимог або проєктування й внести зміни</label><label class="option"><input type="radio" name="q7" value="d"> Назвати це впровадженням</label></div>
+   <div class="question"><p>8. Яке твердження найточніше описує життєвий цикл програмного проєкту?</p>
+    <label class="option"><input type="radio" name="q8" value="a"> Це одноразове написання коду без перевірки</label><label class="option"><input type="radio" name="q8" value="b"> Це послідовність етапів від аналізу потреб до супроводу продукту</label><label class="option"><input type="radio" name="q8" value="c"> Це лише процес тестування</label><label class="option"><input type="radio" name="q8" value="d"> Це тільки підготовка дизайну інтерфейсу</label></div>
+   <button type="button" onclick="gradeQuiz()">Перевірити тест</button>
+   <button type="reset" class="secondary" onclick="document.getElementById('quizFeedback').className='feedback';document.getElementById('quizFeedback').innerHTML=''">Скинути відповіді</button>
+  </form>
+  <div id="quizFeedback" class="feedback" aria-live="polite"></div>
+ </div>
+</section>
+<section>
+ <div class="panel">
+  <h2>Підсумкова рефлексія</h2>
+  <label for="reflection">Який етап життєвого циклу здається тобі найважливішим для успіху проєкту? Обґрунтуй.</label>
+  <textarea id="reflection" placeholder="Моя думка..."></textarea>
+ </div>
+</section>
+</main>
+<footer>Навчальний матеріал для учнів 10 класу · Життєвий цикл програмного проєкту</footer>
+<script>
+function checkCompetence(){
+ const fields=['c1','c2','c3','c4','response'];let filled=fields.filter(id=>document.getElementById(id).value.trim().length>15).length;
+ const choice=document.getElementById('change').value;const box=document.getElementById('competenceFeedback');
+ box.className='feedback '+(filled>=4&&choice?'good':'bad');
+ box.textContent=filled>=4&&choice?'Відповідь опрацьована. Переконайся, що ти пов’язав/пов’язала зміну вимог із поверненням до аналізу або проєктування, а потім передбачив/передбачила повторне тестування. Це автоматична перевірка заповнення, а не оцінювання змісту.':'Заповни всі чотири основні поля розгорнутими відповідями та обери зміну від замовника. Перевір, чи пояснив/пояснила її вплив на етапи проєкту.';
+}
+function downloadPassport(){
+ const labels=[['Назва проєкту','projectName'],['1. Аналіз проблеми та вимог','problem'],['2. Планування та проєктування','plan'],['3. Реалізація','build'],['4. Тестування та налагодження','test'],['5. Впровадження','launch'],['6. Супровід і вдосконалення','support'],['Ризики та способи їх зменшення','risk'],['Рефлексія','reflection']];
+ let content='ПАСПОРТ ПРОГРАМНОГО ПРОЄКТУ\\nЖиттєвий цикл програмного проєкту\\n\\n';
+ labels.forEach(([label,id])=>{content+=label+'\\n'+(document.getElementById(id).value.trim()||'—')+'\\n\\n'});
+ const blob=new Blob(['\\ufeff'+content],{type:'text/plain;charset=utf-8'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='pasport-prohramnoho-proiektu.txt';a.click();URL.revokeObjectURL(url);
+}
+function clearPractice(){['projectName','problem','plan','build','test','launch','support','risk'].forEach(id=>document.getElementById(id).value='');document.querySelectorAll('.checklist input').forEach(x=>x.checked=false)}
+function gradeQuiz(){
+ const key={q1:'b',q2:'c',q3:'a',q4:'b',q5:'c',q6:'b',q7:'c',q8:'b'};
+ const explanations=['Початковий етап — з’ясування проблеми та потреб користувачів.','Ресурси, строки й структуру визначають під час планування та проєктування.','На етапі реалізації створюють програмний продукт.','Тестування допомагає виявити помилки та перевірити відповідність вимогам.','Впровадження робить готовий продукт доступним для користувачів.','Супровід передбачає виправлення недоліків та оновлення продукту.','Якщо вимоги не враховано, потрібно повернутися до аналізу чи проєктування, внести зміни й повторити перевірку.','Життєвий цикл охоплює всі етапи — від аналізу до супроводу.'];
+ let score=0,details=[];for(let i=1;i<=8;i++){let selected=document.querySelector('input[name=q'+i+']:checked');if(selected&&selected.value===key['q'+i])score++;details.push((i)+'. '+(selected&&selected.value===key['q'+i]?'Правильно. ':'Потрібно повторити. ')+explanations[i-1])}
+ const box=document.getElementById('quizFeedback');box.className='feedback '+(score>=6?'good':'bad');box.innerHTML='<div class="result">Результат: '+score+' із 8 ('+Math.round(score/8*100)+'%)</div><p>'+(score>=7?'Відмінно!':score>=5?'Добре. Переглянь пояснення до помилок.':'Повернися до теорії та повтори етапи життєвого циклу.')+'</p><ol>'+details.map(x=>'<li>'+x+'</li>').join('')+'</ol>';
+}
+</script>
+</body></html>
